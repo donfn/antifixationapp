@@ -19,8 +19,7 @@ class App extends React.Component {
         }) 
       })
   }
-  render() {
-    const { patients } = this.state;
+  render() { 
     console.log(this.state.patients)
     return (
       <div className='m-20'>
