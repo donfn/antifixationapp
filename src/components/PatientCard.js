@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 class PatientCard extends Component { 
     render() {
         let state;
-        if(parseFloat(this.props.state) > 0.3 && parseFloat(this.props.state) < 0.7){
+        if(parseFloat(this.props.state) > 30 && parseFloat(this.props.state) < 70){
             state = <p style={{ color: '#ffcc00'}} >{this.props.state}</p>
         }
-        else if(parseFloat(this.props.state) > 0.7){
+        else if(parseFloat(this.props.state) > 70){
             state = <p style={{ color: '#ff3300' }} >{this.props.state}</p>
         }
         else{
