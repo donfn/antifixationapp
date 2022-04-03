@@ -30,7 +30,12 @@ class App extends React.Component {
         </div>
         <div className='flex flex-col'>
           {this.state.patients.map(patient => {
-            return <PatientCard name={patient.name} age={patient.age} state={patient.state} />
+            return <PatientCard
+                     key={patient.id}
+                     name={patient.name}
+                     age={patient.age}
+                     state={patient.state}
+                   />
           })}
         </div>
       </div>
