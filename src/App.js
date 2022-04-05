@@ -11,15 +11,23 @@ class App extends React.Component {
     }
   }
   componentDidMount() {
-    fetch("http://localhost:3000/patients")
+    this.interval = setInterval(() => this.getPatients(), 300);
+  }
+  componentWillUnmount(){
+    clearInterval(this.interval)
+  }
+
+  async getPatients() {
+    await fetch("http://localhost:3000/patients")
       .then(data => data.json())
       .then(json => {
         this.setState({
           patients: json
-        }) 
+        })
       })
   }
-  render() { 
+
+  render() {
     console.log(this.state.patients)
     return (
       <div className='m-20'>
@@ -31,11 +39,11 @@ class App extends React.Component {
         <div className='flex flex-col'>
           {this.state.patients.map(patient => {
             return <PatientCard
-                     key={patient.id}
-                     name={patient.name}
-                     age={patient.age}
-                     state={patient.state}
-                   />
+              key={patient.id}
+              name={patient.name}
+              age={patient.age}
+              state={patient.state}
+            />
           })}
         </div>
       </div>
