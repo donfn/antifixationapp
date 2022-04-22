@@ -40,8 +40,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='m-20'>
-        <table className=' w-max'> 
+      <div className='m-20 text-center'>
+        <table className=' w-max m-auto'> 
           <tr>
             <th>Name</th>
             <th>Age</th>
