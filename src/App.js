@@ -13,7 +13,7 @@ class App extends React.Component {
   componentDidMount() {
     //this.interval = setInterval(() => this.getPatients(), 300);
     this.getPatients();
-    this.interval = setInterval(() => this.generateData(), 1000);
+    this.interval = setInterval(() => this.generateData(), 2000);
   }
   componentWillUnmount(){
     clearInterval(this.interval)
@@ -41,7 +41,7 @@ class App extends React.Component {
   render() {
     return (
       <div className='m-20'>
-        <table> 
+        <table className=' w-max'> 
           <tr>
             <th>Name</th>
             <th>Age</th>
