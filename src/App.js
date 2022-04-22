@@ -41,21 +41,21 @@ class App extends React.Component {
   render() {
     return (
       <div className='m-20'>
-        <div className='flex space-x-3'>
-          <p>Name</p>
-          <p>Age</p>
-          <p>State</p>
-        </div>
-        <div className='flex flex-col'>
-          {this.state.patients.sort((a,b) => b.state - a.state).map(patient => {
-            return <PatientCard
-              key={patient.id}
-              name={patient.name}
-              age={patient.age}
-              state={patient.state}
-            />
-          })}
-        </div>
+        <table> 
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>State</th>
+          </tr>   
+            {this.state.patients.sort((a,b) => b.state - a.state).map(patient => {
+              return <PatientCard
+                key={patient.id}
+                name={patient.name}
+                age={patient.age}
+                state={patient.state}
+              />
+            })}
+        </table>
       </div>
     );
   }

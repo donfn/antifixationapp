@@ -13,13 +13,11 @@ class PatientCard extends Component {
             state = <p style={{ color: "#0a8a0e" }} >{this.props.state}</p>
         }
         return (
-            <div>  
-                <div className='flex space-x-7'>
-                    <p>{this.props.name}</p>
-                    <p>{this.props.age}</p> 
-                    {state}
-                </div>
-            </div>
+            <tr>   
+                <td>{this.props.name}</td>
+                <td>{this.props.age}</td> 
+                <td>{state}</td>
+            </tr>
         );
     }
 }
